@@ -18,3 +18,8 @@ output "subnets_names" {
   description = "Name of the subnets"
   value       = module.vpc.subnets_names
 }
+
+output "project_id" {
+  description = "VPC project id"
+  value       = module.vpc.project_id
+}

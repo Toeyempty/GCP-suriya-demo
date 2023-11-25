@@ -9,8 +9,9 @@ module "gke" {
   source                     = "terraform-google-modules/kubernetes-engine/google//modules/private-cluster"
   project_id                 = var.project_id
   name                       = var.name_cluster
+  kubernetes_version         = var.kubernetes_version
   region                     = var.region
-  zones                      = var.zone
+  zones                      = var.gke_zones
   network                    = var.vpc_name
   subnetwork                 = var.subnets_name
   ip_range_pods              = var.ip_range_pods

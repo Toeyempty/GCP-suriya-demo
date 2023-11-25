@@ -1,10 +1,12 @@
 region                      = "asia-southeast1"
-zone                        = "asia-southeast1-a"
 project_id                  = "suriya-demo"
 credentials_file_path       = "./credential/suriya-demo-77de251688a0.json"
 
 ## Network
 network_name                = "default-vpc"
+zones                       = "asia-southeast1-a"
+route_name                  = "default-route"
+cloud_nat_name              = "default-nat"
 routing_mode                = "GLOBAL"
     subnets = [
         {
@@ -23,7 +25,6 @@ routing_mode                = "GLOBAL"
             subnet_region         = "asia-southeast1"
         }
     ]
-
     secondary_ranges = {
         subnet-01 = [
             {
@@ -35,7 +36,6 @@ routing_mode                = "GLOBAL"
                 ip_cidr_range = "10.10.5.0/24"
             },
         ]
-
         subnet-02 = [
             {
                 range_name    = "subnet-02-secondary-01"
@@ -46,7 +46,6 @@ routing_mode                = "GLOBAL"
                 ip_cidr_range = "10.10.13.0/24"
             },
         ]
-
         subnet-03 = [
             {
                 range_name    = "subnet-03-secondary-01"
@@ -59,9 +58,15 @@ routing_mode                = "GLOBAL"
         ]
     }
 
+## DNS
+  dns_type                    = "private"
+  dns_name                    = "suriya-demo.com"
+  dns_domain                  = "suriya-demo.com"
 
 ## GKE CLuster
-  name_cluster                 = "suriya_demo"
+  name_cluster                 = "suriya-demo-cluster"
+  kubernetes_version           = "1.27"
+  gke_zones                    = ["asia-southeast1-a"]
   subnets_name                 = "subnet-01"
   ip_range_pods                = "subnet-01-secondary-01"
   ip_range_services            = "subnet-01-secondary-02"
@@ -76,18 +81,14 @@ routing_mode                = "GLOBAL"
   monitoring_service           = "none"
   regional                     = false
   maintenance_start_time	   = "01:00"
-  default_max_pods_per_node    = 32
+  default_max_pods_per_node    = 6
   deletion_protection          = false
-
-
   node_pools = [
     {
       name                      = "nodepool-demo"
       machine_type              = "e2-standard-2"
-      # node_locations            = "asia-southeast1-a,asia-southeast1-b"
       min_count                 = 2
       max_count                 = 3
-      # local_ssd_count           = 0
       spot                      = true
       disk_size_gb              = 20
       disk_type                 = "pd-standard"
@@ -100,6 +101,5 @@ routing_mode                = "GLOBAL"
       # preemptible               = false
       initial_node_count        = 1
       node_count                = 1
-
     },
   ]

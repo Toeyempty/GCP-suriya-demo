@@ -1,7 +1,8 @@
 variable "project_id" {}
 variable "name_cluster" {}
+variable "kubernetes_version" {}
 variable "region" {}
-variable "zones" {}
+variable "gke_zones" {}
 variable "vpc_name" {}
 variable "subnets_name" {}
 variable "ip_range_pods" {}

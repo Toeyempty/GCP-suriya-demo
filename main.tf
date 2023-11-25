@@ -2,33 +2,40 @@ terraform {
   required_providers {
     google = {
       source = "hashicorp/google"
-      version = "5.7.0"
+      version = "5.0.0"
     }
   }
 }
 
-# local = {
-#     "project"       = "suriya-demo"
-#     "environment"   = "dev"
-#     "terraform"     = "true"
-#   }
 
-module "vpc" {
+module "network" {
   source                      = "./network"
   project_id                  = var.project_id
   network_name                = var.network_name
   routing_mode                = var.routing_mode
   subnets                     = var.subnets
   secondary_ranges            = var.secondary_ranges
+  route_name                  = var.route_name
+  cloud_nat_name              = var.cloud_nat_name
+  region                        = var.region
+}
+
+module "dns" {
+  source                      = "./dns"
+  project_id                  = var.project_id
+  dns_type                    = var.dns_type
+  dns_name                    = var.dns_name
+  dns_domain                  = var.dns_domain
 }
 
 module "gke_cluster" {
   source                        = "./gke_cluster"
   project_id                    = var.project_id
   name_cluster                  = var.name_cluster
+  kubernetes_version            = var.kubernetes_version
   region                        = var.region
-  zone                          = var.zone
-  vpc_name                      = var.network_name
+  gke_zones                     = var.gke_zones
+  vpc_name                      = module.network.vpc_name
   subnets_name                  = var.subnets_name
   ip_range_pods                 = var.ip_range_pods
   ip_range_services             = var.ip_range_services

@@ -1,18 +1,26 @@
 ## Default
-variable   "credentials_file_path"{}
-variable   "project_id" {}
-variable   "region" {}
-variable   "zone" {}
+variable "credentials_file_path"{}
+variable "project_id" {}
+variable "region" {}
+variable "zones" {}
 
 ## Network
-variable   "network_name" {}
-variable   "routing_mode" {}
-variable   "subnets" {}
-variable   "secondary_ranges" {}
+variable "network_name" {}
+variable "routing_mode" {}
+variable "subnets" {}
+variable "secondary_ranges" {}
+variable "route_name" {}
+variable "cloud_nat_name" {}
+
+#DNS
+variable   "dns_type" {}
+variable   "dns_name" {}
+variable   "dns_domain" {}
 
 ## GKE Cluster
 variable "name_cluster" {}
-variable "vpc_name" {}
+variable "gke_zones" {}
+variable "kubernetes_version" {}
 variable "subnets_name" {}
 variable "ip_range_pods" {}
 variable "ip_range_services" {}
