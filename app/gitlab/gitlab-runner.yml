@@ -3,6 +3,7 @@ apiVersion: apps.gitlab.com/v1beta2
 kind: Runner
 metadata:
   name: gitlab-runner
+  namespace: gitlab-runner
 spec:
   gitlabUrl: https://gitlab.com
   buildImage: alpine

@@ -30,6 +30,5 @@ module "gke" {
   deletion_protection        = var.deletion_protection
   node_pools                 = var.node_pools
   cluster_dns_provider       = var.cluster_dns_provider
-  cluster_dns_domain         = var.cluster_dns_domain
   cluster_dns_scope          = var.cluster_dns_scope
 }

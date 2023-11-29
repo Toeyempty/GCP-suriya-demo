@@ -1,0 +1,18 @@
+# helm install --namespace gitlab-runner gitlab-runner -f gitlab-runner-values-file.yaml gitlab/gitlab-runner
+
+logLevel: debug
+runners:
+  tags: "nonprod,docker"
+  name: "runner-nonprod"
+replicas: 1
+gitlabUrl: https://gitlab.com
+runnerRegistrationToken: GR1348941iFM25gC8ji5ar_zhgUbs
+concurrent: 1
+
+resources: 
+  limits:
+    memory: 512Mi
+    cpu: 500m
+  requests:
+    memory: 128Mi
+    cpu: 100m

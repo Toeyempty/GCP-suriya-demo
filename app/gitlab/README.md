@@ -1,6 +1,6 @@
 
 gitlab-registry
-glpat-VgVjtLxHzUcyFsfVyDMa
+glpat-WFV2s6eqFTigkExqvtz_
 
 
 docker login registry.gitlab.com

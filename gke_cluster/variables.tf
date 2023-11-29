@@ -21,5 +21,4 @@ variable "default_max_pods_per_node" {}
 variable "deletion_protection" {}
 variable "node_pools" {}
 variable "cluster_dns_provider" {}
-variable "cluster_dns_domain" {}
 variable "cluster_dns_scope" {}

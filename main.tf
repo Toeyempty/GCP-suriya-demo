@@ -54,5 +54,4 @@ module "gke_cluster" {
   node_pools                    = var.node_pools
   cluster_dns_provider          = var.cluster_dns_provider
   cluster_dns_scope             = var.cluster_dns_scope
-  cluster_dns_domain            = module.dns.domain
 }

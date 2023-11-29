@@ -2,8 +2,4 @@ https://www.youtube.com/watch?v=QRR3WuwnxXE
 
 helm repo add gitlab https://charts.gitlab.io
 helm repo update
-helm upgrade --install k8s-agent gitlab/gitlab-agent --namespace gitlab-agent-k8s-agent --create-namespace --set image.tag=v16.7.0-rc2 --set config.token=glagent-_kryJ9FXZCm_TxbPJoV4atyEzkS6QubwEp3DM--QsLYNPCDX3A --set config.kasAddress=wss://kas.gitlab.com
-
-
-
-docker pull artifact.lotuss.com/public/tools/yq@sha256:b00dbc703c8ead743c1900071fc79595d02a5d1f2a9b9d039b83ed01a731a0a5
+helm upgrade --install gitlab-runner gitlab/gitlab-agent --namespace gitlab-runner --create-namespace --set config.token=glagent-_kryJ9FXZCm_TxbPJoV4atyEzkS6QubwEp3DM--QsLYNPCDX3A --set config.kasAddress=wss://kas.gitlab.com
