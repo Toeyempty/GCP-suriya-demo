@@ -1,0 +1,7 @@
+expose:
+    type: loadBalancer
+    tls:
+      enabled: false
+      auto:
+        commonName: "harbor"
+externalURL: http://harbor.suriya.com

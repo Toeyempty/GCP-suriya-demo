@@ -1,0 +1,8 @@
+elasticsearchHosts: "https://elasticsearch-master:9200"
+ingress:
+  enabled: false
+  className: "nginx"
+  hosts:
+    - host: kibana.suriya.com
+      paths:
+        - path: /

@@ -1,0 +1,42 @@
+# apiVersion: traefik.containo.us/v1alpha1
+# kind: IngressRoute
+# metadata:
+#   name: nginx-ingress-route
+#   namespace: default
+# spec:
+#   entryPoints:
+#     - web
+#   routes:
+#   - match: Host(`example.com`) && PathPrefix(`/nginx`)
+#     kind: Rule
+#     services:
+#     - name: nginx-service
+#       port: 80
+
+
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: nginx
+  namespace: default
+  annotations: 
+    kubernetes.io/ingress.class: traefik-external
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`www.nginx.local.example.com`)
+      kind: Rule
+      services:
+        - name: nginx
+          port: 80
+    - match: Host(`nginx.local.example.com`)
+      kind: Rule
+      services:
+        - name: nginx
+          port: 80
+      middlewares:
+        - name: default-headers
+  tls:
+    secretName: local-example-com-tls

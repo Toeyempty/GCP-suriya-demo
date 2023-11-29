@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gitlab-runner
+  namespace: argocd
+  annotations:
+    notifications.argoproj.io/subscribe.sync-operation-change.teams: teams
+  labels:
+    app: gitlab-runner
+    project: gitlab
+spec:
+  project: default
+  source:
+    repoURL: https://repo.lotuss.com/devops-core/helm/gitlab-runner.git
+    path: helm
+    targetRevision: main
+    helm:
+      releaseName: gitlab-runner
+      valueFiles: 
+        - ../values/linux/common.nonprod.th.yaml
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: gitlab-runner
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

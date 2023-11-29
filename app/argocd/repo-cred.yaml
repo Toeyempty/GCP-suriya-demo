@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: private-repo-creds
+  namespace: argocd
+  labels:
+    argocd.argoproj.io/secret-type: repo-creds
+stringData:
+  type: git
+  url: https://repo.lotuss.com/supplychain/gitops
+  username: supplychain-gitops-deployer
+  password: 4oRTFPca3U2fRyT5Q7Ed
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: common-repo-creds
+  namespace: argocd
+  labels:
+    argocd.argoproj.io/secret-type: repo-creds
+stringData:
+  type: git
+  url: https://repo.lotuss.com/common/helm
+  username: common-gitops-deployer
+  password: 22gyAUk4NH_jz9wzecgc

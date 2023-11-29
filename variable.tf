@@ -24,7 +24,6 @@ variable "kubernetes_version" {}
 variable "subnets_name" {}
 variable "ip_range_pods" {}
 variable "ip_range_services" {}
-variable "configure_ip_masq" {}
 variable "http_load_balancing" {}
 variable "horizontal_pod_autoscaling" {}
 variable "filestore_csi_driver" {}
@@ -38,3 +37,5 @@ variable "maintenance_start_time" {}
 variable "default_max_pods_per_node" {}
 variable "deletion_protection" {}
 variable "node_pools" {}
+variable "cluster_dns_provider" {}
+variable "cluster_dns_scope" {}

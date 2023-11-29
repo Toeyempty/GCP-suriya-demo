@@ -5,27 +5,26 @@ module "dns_private_zone" {
   type       = var.dns_type
   name       = var.dns_name
   domain     = var.dns_domain
-
-#   private_visibility_config_networks = [
-#     "https://www.googleapis.com/compute/v1/projects/my-project/global/networks/my-vpc"
-#   ]
-
-#   recordsets = [
-#     {
-#       name    = ""
-#       type    = "NS"
-#       ttl     = 300
-#       records = [
-#         "127.0.0.1",
-#       ]
-#     },
-#     {
-#       name    = "localhost"
-#       type    = "A"
-#       ttl     = 300
-#       records = [
-#         "127.0.0.1",
-#       ]
-#     },
-#   ]
+  
+  # private_visibility_config_networks = [
+  #   "https://www.googleapis.com/compute/v1/projects/my-project/global/networks/my-vpc"
+  # ]
+  # recordsets = [
+  #   {
+  #     name    = ""
+  #     type    = "NS"
+  #     ttl     = 300
+  #     records = [
+  #       "127.0.0.1",
+  #     ]
+  #   },
+  #   {
+  #     name    = "localhost"
+  #     type    = "A"
+  #     ttl     = 300
+  #     records = [
+  #       "127.0.0.1",
+  #     ]
+  #   },
+  # ]
 }

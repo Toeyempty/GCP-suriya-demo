@@ -1,0 +1,40 @@
+# apiVersion: networking.istio.io/v1alpha3
+# kind: VirtualService
+# metadata:
+#   name: nexus-server
+#   namespace: nexus
+# spec:
+#   gateways:
+#     - istio-system/demo
+#   hosts:
+#     - nexus.suriya.com
+#   http:
+#     - match:
+#         - uri:
+#             prefix: /
+#       route:
+#         - destination:
+#             host: nexus-repository-manager
+#             port:
+#               number: 8081
+
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nexus-ingress
+  namespace: nexus
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: web
+spec:
+  rules:
+  - host: nexus.suriya.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: nexus-repository-manager
+            port:
+              number: 8081

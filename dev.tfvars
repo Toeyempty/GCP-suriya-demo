@@ -1,9 +1,11 @@
+# gcloud container clusters get-credentials suriya-demo-cluster --region=asia-southeast1-a
+
 region                      = "asia-southeast1"
 project_id                  = "suriya-demo"
 credentials_file_path       = "./credential/suriya-demo-77de251688a0.json"
 
 ## Network
-network_name                = "default-vpc"
+network_name                = "demo-vpc"
 zones                       = "asia-southeast1-a"
 route_name                  = "default-route"
 cloud_nat_name              = "default-nat"
@@ -60,17 +62,17 @@ routing_mode                = "GLOBAL"
 
 ## DNS
   dns_type                    = "private"
-  dns_name                    = "suriya-demo.com"
-  dns_domain                  = "suriya-demo.com"
+  dns_name                    = "demo-com"
+  dns_domain                  = "demo.com."
 
 ## GKE CLuster
   name_cluster                 = "suriya-demo-cluster"
-  kubernetes_version           = "1.27"
-  gke_zones                    = ["asia-southeast1-a"]
+#   kubernetes_version           = "1.27"
+  kubernetes_version           = "latest"
+  gke_zones                    = ["asia-southeast1-a","asia-southeast1-b","asia-southeast1-c"]
   subnets_name                 = "subnet-01"
   ip_range_pods                = "subnet-01-secondary-01"
   ip_range_services            = "subnet-01-secondary-02"
-  configure_ip_masq            = true
   http_load_balancing          = true
   horizontal_pod_autoscaling   = true
   filestore_csi_driver         = false
@@ -81,14 +83,16 @@ routing_mode                = "GLOBAL"
   monitoring_service           = "none"
   regional                     = false
   maintenance_start_time	   = "01:00"
-  default_max_pods_per_node    = 6
+  default_max_pods_per_node    = 32
   deletion_protection          = false
+  cluster_dns_provider         = "CLOUD_DNS"
+  cluster_dns_scope            = "CLUSTER_SCOPE"
   node_pools = [
     {
       name                      = "nodepool-demo"
-      machine_type              = "e2-standard-2"
+      machine_type              = "e2-standard-4"
       min_count                 = 2
-      max_count                 = 3
+      max_count                 = 6
       spot                      = true
       disk_size_gb              = 20
       disk_type                 = "pd-standard"

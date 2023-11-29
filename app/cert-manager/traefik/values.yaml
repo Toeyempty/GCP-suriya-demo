@@ -1,0 +1,12 @@
+# helm install cert-manager jetstack/cert-manager --namespace cert-manager --values=values.yaml --version v1.9.1
+
+installCRDs: false
+replicaCount: 1
+extraArgs:
+  - --dns01-recursive-nameservers=1.1.1.1:53,9.9.9.9:53
+  - --dns01-recursive-nameservers-only
+podDnsPolicy: None
+podDnsConfig:
+  nameservers:
+    - 1.1.1.1
+    - 9.9.9.9

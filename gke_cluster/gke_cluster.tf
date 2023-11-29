@@ -16,7 +16,6 @@ module "gke" {
   subnetwork                 = var.subnets_name
   ip_range_pods              = var.ip_range_pods
   ip_range_services          = var.ip_range_services
-  configure_ip_masq          = var.configure_ip_masq
   http_load_balancing        = var.http_load_balancing
   horizontal_pod_autoscaling = var.horizontal_pod_autoscaling
   filestore_csi_driver       = var.filestore_csi_driver
@@ -30,4 +29,7 @@ module "gke" {
   default_max_pods_per_node  = var.default_max_pods_per_node
   deletion_protection        = var.deletion_protection
   node_pools                 = var.node_pools
+  cluster_dns_provider       = var.cluster_dns_provider
+  cluster_dns_domain         = var.cluster_dns_domain
+  cluster_dns_scope          = var.cluster_dns_scope
 }
