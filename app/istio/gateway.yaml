@@ -8,15 +8,15 @@ spec:
     istio: ingressgateway
   servers:
     - hosts:
-        - "*.suriya.com"
+        - "*.demo.com"
       port:
         name: http
         number: 80
         protocol: HTTP
       tls:
-        httpsRedirect: true
+        httpsRedirect: false
     - hosts:
-        -  "*.suriya.com"
+        -  "*.demo.com"
       port:
         name: https
         number: 443

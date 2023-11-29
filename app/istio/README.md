@@ -1,3 +1,5 @@
-# 2. Install ISTIO
+<!-- # 3. Install ISTIO -->
 
-./istioctl install --set profile=demo -y
+
+## Download istioctl form  https://github.com/istio/istio
+## istioctl install --set profile=demo -y
