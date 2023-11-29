@@ -1,5 +1,0 @@
-https://www.youtube.com/watch?v=QRR3WuwnxXE
-
-helm repo add gitlab https://charts.gitlab.io
-helm repo update
-helm upgrade --install gitlab-runner gitlab/gitlab-agent --namespace gitlab-runner --create-namespace --set config.token=glagent-_kryJ9FXZCm_TxbPJoV4atyEzkS6QubwEp3DM--QsLYNPCDX3A --set config.kasAddress=wss://kas.gitlab.com
