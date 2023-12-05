@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "suriya-demo",
+  "private_key_id": "80d22c9d43ca46968ee65232590e6be0b404a1d0",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDpBDQsvmVvhksH\nvnFagKl/l1pNN1eBiIwYi2ZD3TYwpJAInkSTLnRwsDAQdKqLEESl+PDIimF4zMwJ\ndDAuln3v6al4ipQqJd/v8q9eKadelIu/WXJaE0I1iDnZXH8Zx3OBuJ8Tph5MNfac\ntJAWp+4it5YJh/vAXp9wQ1ya6dpgq4brhKkeyUhW9HJdJxeHK9Gg0T83o/jZsfhl\n2JEkwiKVWHR9uayRIusUmaHMRw00b2Pt+GLn+4UoNuloW9c5mmzb4hwpknp4uFI7\nBDeJ434YduDjcgVf2KssuUF4ZIP8FtowvikzPTXdmVGJk4gSFk1IOZtK4qequqSP\ng5HB2yF1AgMBAAECggEAMU5J6gPZu+kLPFbAbpmWBCEXIwqoUgj+N/1bRNXsrwtL\nTP+MXCZyzhuB+CFvquBk3kfYT170tBaFwCRdQ6ZlfJwRV6ffJTIBeij8kay3tSwy\ni+lV6Jh1pJUwRH2tiVtqZhMWWhaHB7JNfig46wpaue7l6RtkmnaLPzqJwF/mbRjH\nEKFofKyly33oB+rGo2u3SxdS7toIJBwHLS3UDFMENHOh5ZtTy88hAupoFhmEXvPs\nQorWCjL7wkk2qhdIBvslB9OQihBcczTAa7uihKpZ8ICCqDCHzU/JRJUDaEjvrDaS\nhq1Qs5tGQm7rB2PaMHtHcMP7tMD17+7jwaD8fWPi2wKBgQD+KXFrAQRxqq+QzBTm\nZDlu7fJgVfIAj7vpMSsqTfglObhBqsO7V4qxBieKLPDKEurCexXhVePU5W+BeoCk\nyVA2XZrEwD4FxAZvVkio1AOCRBzJFWtHjzjYUvV67G4xkOOiGo4X9WALKbD9PlhX\n5PLcqMLRXQ+ddTdRlDOzJrHWnwKBgQDqs5ymkraWck8PxsHvJ8IptwWjGCK576sH\n61fccpWpvfLzQEw1rHmrOi4QyF9h2YH8pNieeqNcY+EFTtIVqcgfO9HCnjYuNqSx\nqOkc+F8u8J2jAt2obnM7ItNwf0YGj+UXEydpYeYtj2+IvlWMV9QpvkagRMd2L6CW\n8+CPacNzawKBgH6nBD/ASAikd8x+BkQw2XXv2QIskeW5ungf6lSweeGC+9CtWdA3\ndYN1f6qZbnwkJRw43dRmSpxCoOgytXxoXTJaPs+gxMd2wYYlxxtqWz1E19tUcxs7\nwaX64R0aSGcmvmh/NyO1QOEPK4Vm1fsmuec/qaVO7IMYcDKU2ZaCx8gdAoGBANTZ\nXUjnpzVbp33sSDcG/JxuQmt92Qh9ZcOB2KWxOS++d1XJyxOmPpVd5ycLQQ1xf+RK\n77USDZMddZYlvHsvBbHlwz7X0tUoc0Y3pGnEijX8u0l5sOIugMxxsgXFNxF+cEnz\n8fstcN2CxqjhzJ3BjUTqLgztM2NooCAmPlJxnXLPAoGBAPIckjodoI7KOE27douF\n2nyDPgamBuRBKyflIR4+KLug/dDzncDo0EdPuYHE8h5Ft9/MXRvOoOqjP/DzB7z+\nJuFOA8PbKTg1tuo5DF68X+CisNt/OQcQZreRI07ENbbL4N4Bk9190nPHf0/TgxmW\nYhUwx3kj8XeQuba5rVoEVg1O\n-----END PRIVATE KEY-----\n",
+  "client_email": "dns01-solver@suriya-demo.iam.gserviceaccount.com",
+  "client_id": "106424120014060267898",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/dns01-solver%40suriya-demo.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

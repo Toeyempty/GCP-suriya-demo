@@ -6,9 +6,9 @@ module "dns_private_zone" {
   name       = var.dns_name
   domain     = var.dns_domain
   
-  # private_visibility_config_networks = [
-  #   "https://www.googleapis.com/compute/v1/projects/my-project/global/networks/my-vpc"
-  # ]
+  private_visibility_config_networks = [
+    "https://www.googleapis.com/compute/v1/projects/suriya-demo/global/networks/demo-vpc"
+  ]
   # recordsets = [
   #   {
   #     name    = ""

@@ -1,0 +1,21 @@
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: certificate-cluster-staging
+spec:
+  acme:
+    email: suriya.infortech9@gmail.com
+    server: https://acme-staging-v02.api.letsencrypt.org/directory
+    privateKeySecretRef:
+      name: certificate-tls
+    solvers:
+    - dns01:
+        cloudDNS:
+          project: suriya-demo
+          serviceAccountSecretRef:
+            name: cert-manager-credentials
+            key: key.json
+      selector:        
+        dnsNames:        
+        - 'demo.com'        
+        - '*.demo.com'

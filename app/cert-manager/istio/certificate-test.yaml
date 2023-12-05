@@ -1,0 +1,15 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: demo-com-ssl-test
+  namespace: istio-system
+spec:
+  commonName: "argocd.demo.com"
+  secretName: demo-com-ssl
+  issuerRef:
+    kind: ClusterIssuer
+    # name: certificate-cluster-prod
+    name: certificate-cluster-staging
+    # group: cert-manager.io
+  dnsNames:
+  - "argocd.demo.com"

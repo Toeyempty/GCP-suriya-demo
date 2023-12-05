@@ -22,5 +22,5 @@ spec:
         number: 443
         protocol: HTTPS
       tls:
-        credentialName: wildcard-ssl
+        credentialName: certificate-tls
         mode: SIMPLE

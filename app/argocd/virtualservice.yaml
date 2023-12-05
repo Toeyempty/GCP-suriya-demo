@@ -5,15 +5,15 @@ metadata:
   namespace: argocd
 spec:
   hosts:
-  - "argocd.suriya.com"
+  - argocd.suriya-demo.com
   gateways:
-  - istio-system/gateway-staging
+  - istio-system/demo
   http:
-  - match:
-    - uri:
-        exact: /
-    route:
-    - destination:
-        host: argocd-server
-        port:
-          number: 443
+    - match:
+        - uri:
+            prefix: /
+      route:
+        - destination:
+            host: argocd-server
+            port:
+              number: 443

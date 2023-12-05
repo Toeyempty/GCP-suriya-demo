@@ -1,0 +1,19 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: grafana
+  namespace: prometheus 
+spec:
+  hosts:
+  - grafana.suriya-demo.com
+  gateways:
+  - istio-system/demo
+  http:
+    - match:
+        - uri:
+            prefix: /
+      route:
+        - destination:
+            host: prometheus-grafana
+            port:
+              number: 80

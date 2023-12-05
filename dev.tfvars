@@ -67,9 +67,10 @@ routing_mode                = "GLOBAL"
 
 ## GKE CLuster
   name_cluster                 = "suriya-demo-cluster"
-#   kubernetes_version           = "1.27"
+#   kubernetes_version           = "1.26"
   kubernetes_version           = "latest"
-  gke_zones                    = ["asia-southeast1-a","asia-southeast1-b","asia-southeast1-c"]
+#   gke_zones                    = ["asia-southeast1-a","asia-southeast1-b","asia-southeast1-c"]
+  gke_zones                    = ["asia-southeast1-a","asia-southeast1-b"]
   subnets_name                 = "subnet-01"
   ip_range_pods                = "subnet-01-secondary-01"
   ip_range_services            = "subnet-01-secondary-02"
@@ -87,6 +88,7 @@ routing_mode                = "GLOBAL"
   deletion_protection          = false
   cluster_dns_provider         = "CLOUD_DNS"
   cluster_dns_scope            = "CLUSTER_SCOPE"
+#   cluster_dns_scope            = "VPC_SCOPE"
   node_pools = [
     {
       name                      = "nodepool-demo"

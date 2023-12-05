@@ -1,4 +1,5 @@
 # google_client_config and kubernetes provider must be explicitly specified like the following.
+# https://github.com/terraform-google-modules/terraform-google-kubernetes-engine/tree/master/modules/private-cluster
 data "google_client_config" "default" {}
 provider "kubernetes" {
   host                   = "https://${module.gke.endpoint}"
